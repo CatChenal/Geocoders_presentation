@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+  <head><meta charset="utf-8" />
+        <title> Comparison of Location with box center coordinates </title>
+  </head>
+  <!-- Custom stylesheet, it must be in the same directory as the html file -->
+  <link rel="stylesheet" href="custom.css">
+  <body>
+        <table class="table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nominatim</th>
+      <th>GoogleV3</th>
+      <th>ArcGis</th>
+      <th>AzureMaps</th>
+    </tr>
+    <tr>
+      <th>Location is box center?</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>New York City</th>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>Cleopatra's needle</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>Bronx county</th>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>Kings county</th>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>New York county</th>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>Queens county</th>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>Richmond county</th>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>Boston</th>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+  </body>
+</html>

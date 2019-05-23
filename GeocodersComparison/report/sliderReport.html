@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Geocoders Comparisons (slider)</title>
+    <link rel="stylesheet" href="./custom_slid.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <h1 style="padding: 40px;">
+          Four Geocoders Comparisons</h1>
+    
+    <div id="slider1" class="csslider infinity">
+        <input type="radio" name="slides" id="slides_1" checked />
+        <input type="radio" name="slides" id="slides_2" />
+        <input type="radio" name="slides" id="slides_3" />
+        <input type="radio" name="slides" id="slides_4" />
+        <input type="radio" name="slides" id="slides_5" />
+        <input type="radio" name="slides" id="slides_6" />
+        <input type="radio" name="slides" id="slides_7" />
+        <input type="radio" name="slides" id="slides_8" />
+        <input type="radio" name="slides" id="slides_9" />
+        <input type="radio" name="slides" id="slides_10" />
+        <input type="radio" name="slides" id="slides_11" />
+        <input type="radio" name="slides" id="slides_12" />
+        <ul>
+            <!--slide 1-->
+            <li class="scrollable">
+                <h1 style="font-size:2em;color:#006699;">
+                    Comparison of four Geopy geocoders: 
+                    September 2018 vs. April 2019 results</h1>
+                <h3>Part I: Quantitative summary: pairwise differences as distances</h3>
+                <p>Overall, the results from AzureMaps differ the most from the others, especially for 
+                    Kings (Brooklyn) and Richmond (Staten Island) counties, as is shown by their respective 
+                    maps: Slides X, and Y.
+                </p>
+                <p>Notes:<br>
+                I gave a generous 5 km (~3.1 miles) allowance for heatmaping the distance 
+                            differences; this means that the color scale applies to distances that are 
+                            greater than that.
+                <br>
+                I did not find the NYC equivalent 'shapefile with waters' for Boston.
+                </p>
+                <h3>Part II: Maps!</h3>
+                <p>In my updated implementation, I figured out how to draw the box from the shapefiles. 
+                    The map elements from the shapefile are color-coded black in the legends; these are called 
+                    "Boro bounds" in the old maps, "shapefile bounds" and "shapefile box" in the new ones. 
+                    The color of elements for each geocoder is also slightly changed (desaturated).
+                </p>
+                <p>Finally, the embedded <a href="https://python-visualization.github.io/folium/#">Folium</a> 
+                    maps are fully functional:&nbsp;&nbsp;
+                    The zoom indication in the captions helps visualize out-of-bounds results; 
+                    The map elements, which overlap if identical, can be toggled on/off in the legend.
+                </p>
+                <p id="last-p"></p>
+            </li>
+            <!--slide 2-->
+            <li>
+                <figure>
+                    <figcaption>Sep, 2018: AzureMaps differ the most, along with 
+                        ArcGis for the NE corner of the bounding box.
+                    </figcaption>
+                    <img src="../images/sep2018_Heatmap_sns_geodist_difference_mi.svg" 
+                         alt="old Pairwise differences in miles">
+                </figure>
+            </li>
+            <!--slide 3-->
+            <li>
+                <figure>
+                    <figcaption>Apr, 2019: &nbsp; Changed: &#9989; AzureMaps still differ the 
+                        most (Note: the color is scaled to new extremes; other values may be unchanged, e.g. ArcGis)
+                    </figcaption>
+                    <img src="../images/Heatmap_sns_geodist_difference_mi.svg" 
+                            alt="new Pairwise differences in miles">
+                </figure>
+            </li>
+            <!--slide 4-->
+            <li>
+                <div class="row">
+                    <div class="column">
+                        <figure>
+                            <figcaption>Sep, 2018: The queried place coordinates are also
+                                the center of the bounding box?
+                            </figcaption>
+                            <img src="../images/sep2018_comp_Loc_center_tbl.svg" 
+                                alt="old Table 1">
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure>
+                            <figcaption>Apr, 2019: &nbsp; Changed: &#9989; Azure lost its consistency
+                            </figcaption>
+                            <img src="../images/comp_Loc_center_tbl.svg"
+                                 alt="Table 1">
+                        </figure>
+                    </div>
+                </div>
+            </li>
+            <!--slide 5: NYC-->
+            <li>
+                <div class="row">
+                    <div class="column">
+                        <figure>
+                            <figcaption>Sep, 2018: New York City: (zoom OUT 1x)
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/sep2018_New_York_City.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure>
+                            <figcaption>Apr, 2019: &nbsp; Changed: &#9989; (zoom OUT 1x)
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/New_York_City.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                </div>
+            </li>
+            <!--slide 6: NYC county-->
+            <li>
+                <div class="row">
+                    <div class="column">
+                        <figure>
+                            <figcaption>Sep, 2018: New York (Manhattan) county: GoogleV3=AzureMaps?
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/sep2018_New_York_county.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure>
+                            <figcaption>Apr, 2019: &nbsp; Changed: &#9989; AzureMaps got worse!
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/New_York_county.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                </div>
+            </li>
+            <!--slide 7: Cleo-->
+            <li>
+                <div class="row">
+                    <div class="column">
+                        <figure>
+                            <figcaption>Sep, 2018: Cleopatra's Needle in Central Park: 
+                                        AzureMaps box=Central Park; ArcGis box=??
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/sep2018_Cleopatra's_needle.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure>
+                            <figcaption>Apr, 2019: &nbsp; &#9989; AzureMaps got worse: returned a West side 
+                                restaurant & gave it a huge footprint!
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/Cleopatra's_needle.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                </div>
+            </li>
+            <!--slide 8: Bronx-->
+            <li>
+                <div class="row">
+                    <div class="column">
+                        <figure>
+                            <figcaption>Sep, 2018: Bronx county
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/sep2018_Bronx_county.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure>
+                            <figcaption>Apr, 2019: &nbsp; &#9989; Azure improved its box!
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/Bronx_county.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                </div>
+            </li>
+            <!--slide 9: Brooklyn-->
+            <li>
+                <div class="row">
+                    <div class="column">
+                        <figure>
+                            <figcaption>Sep, 2018: Brooklyn (Kings) county: AzureMaps lands in Long Island!
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/sep2018_Kings_county.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure>
+                            <figcaption>Apr, 2019: &nbsp; &#9989; AzureMaps got worse: now near Syracuse! (zoom OUT 3x)
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/Kings_county.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                </div>
+            </li>
+            <!--slide 10: Queens-->
+            <li>
+                <div class="row">
+                    <div class="column">
+                        <figure>
+                            <figcaption>Sep, 2018: Queens county:
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/sep2018_Queens_county.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure>
+                            <figcaption>Apr, 2019: &nbsp; &#9989; Azure got worse!
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/Queens_county.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                </div>
+            </li>
+            <!--slide 11: Staten Island-->
+            <li>
+                <div class="row">
+                    <div class="column">
+                        <figure>
+                            <figcaption>Sep, 2018: Staten Island (Richmond) county (zoom OUT 1x):
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="../geodata/html_frames/sep2018_Richmond_county.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure>
+                            <figcaption>Apr, 2019: &nbsp; &#9989; Azure got worse! (zoom OUT 4x)
+                            </figcaption>
+                            <iframe class="pic" 
+                                    src="..geodata/html_frames/Richmond_county.html">
+                            </iframe>
+                        </figure>
+                    </div>
+                </div>
+            </li>
+            <!--slide 12: Boston-->
+            <li>
+                <div class="row_li">
+                    <div class="column">
+                        <figure>
+                            <figcaption>Sep 2018, Boston: all geocoders boxes extend far into the Atlantic, 
+                                especially that from AzureMaps.
+                            </figcaption>
+                            <iframe class="pic"
+                                    src="../geodata/html_frames/sep2018_Boston.html"
+                            ></iframe>
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure>
+                            <figcaption>Apr 2019, Boston: &nbsp; &#9989; Azure improved its box!
+                            </figcaption>
+                            <iframe class="pic"
+                                    src="../geodata/html_frames/Boston.html"
+                            ></iframe>
+                        </figure>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="arrows">
+            <label for="slides_1"></label>
+            <label for="slides_2"></label>
+            <label for="slides_3"></label>
+            <label for="slides_4"></label>
+            <label for="slides_5"></label>
+            <label for="slides_6"></label>
+            <label for="slides_7"></label>
+            <label for="slides_8"></label>
+            <label for="slides_9"></label>
+            <label for="slides_10"></label>
+            <label for="slides_11"></label>
+            <label for="slides_12"></label>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <p style="font-size:2em;"><strong>Cat Chenal</strong></p>
+    <p>
+        <a href="https://github.com/CatChenal">
+        <i class="fa fa-github"  style="font-size:60px;color:white;"></i></a>  
+         &nbsp;&nbsp;&nbsp;
+        <a href="https://www.linkedin.com/in/catchenal/">
+        <i class="fa fa-linkedin-square" style="font-size:60px;color:white"></i></a>
+    </p>
+</footer>
+</html>

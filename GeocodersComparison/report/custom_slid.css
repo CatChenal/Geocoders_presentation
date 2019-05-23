@@ -1,0 +1,335 @@
+/* slider specific */
+
+/* slider inline style */
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700|Lato);
+::-webkit-scrollbar {
+    width: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+::-webkit-scrollbar-track {
+    background: none;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 94, 168, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /*needed to get 1 row w/2 cols: */
+    box-sizing: border-box;
+}
+html{
+    background-color: #FFF;
+}
+body {
+    height: 90%;
+    text-align: center;
+    font: 400 100% 'Raleway', 'Lato';
+    color: #333;
+}
+ul, ol {
+    padding-left: 10px;
+}
+/*
+.csslider .navigation label {
+    background: #B1B1B1;
+}
+.csslider.inside .navigation label {
+    border: 1px solid #FFF;
+}
+*/
+/* aliasing of class csslider: in original implementation
+enabled id of slide with extra text animation (removed here).
+See: https://github.com/drygiel/csslider */
+#slider1 {
+    margin: 5px;
+    font-family: 'Lato';
+    height: 100%;
+}
+.scrollable li {
+  background-color: white;
+}
+.scrollable h1, h2, h3 {
+  padding: 30px;
+  text-align: justify;
+  line-height: 140%;
+  font-size: 120%;
+  background-color: white;
+}
+.scrollable p {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    text-align: justify;
+    line-height: 140%;
+    font-size: 120%;
+    background-color: white;
+}
+/* to get extra blank lines*/
+#last-p {
+  padding-bottom: 200px;
+  text-align: justify;
+  background-color: white;
+}
+/* ### start import from csslider */
+.csslider {
+  -moz-perspective: 1300px;
+  -ms-perspective: 1300px;
+  -webkit-perspective: 1300px;
+  perspective: 1300px;
+  display: inline-block;
+  text-align: left;
+  position: relative;
+  margin-bottom: 1px;
+  background-color: #FFF;
+}
+.csslider > input {
+  display: none;
+}
+.csslider > input:nth-of-type(12):checked ~ ul li:first-of-type {
+  margin-left: -1100%;
+}
+.csslider > input:nth-of-type(11):checked ~ ul li:first-of-type {
+  margin-left: -1000%;
+}
+.csslider > input:nth-of-type(10):checked ~ ul li:first-of-type {
+  margin-left: -900%;
+}
+.csslider > input:nth-of-type(9):checked ~ ul li:first-of-type {
+  margin-left: -800%;
+}
+.csslider > input:nth-of-type(8):checked ~ ul li:first-of-type {
+  margin-left: -700%;
+}
+.csslider > input:nth-of-type(7):checked ~ ul li:first-of-type {
+  margin-left: -600%;
+}
+.csslider > input:nth-of-type(6):checked ~ ul li:first-of-type {
+  margin-left: -500%;
+}
+.csslider > input:nth-of-type(5):checked ~ ul li:first-of-type {
+  margin-left: -400%;
+}
+.csslider > input:nth-of-type(4):checked ~ ul li:first-of-type {
+  margin-left: -300%;
+}
+.csslider > input:nth-of-type(3):checked ~ ul li:first-of-type {
+  margin-left: -200%;
+}
+.csslider > input:nth-of-type(2):checked ~ ul li:first-of-type {
+  margin-left: -100%;
+}
+.csslider > input:nth-of-type(1):checked ~ ul li:first-of-type {
+  margin-left: 0%;
+}
+.csslider > ul {
+  position: relative;
+  /* change to enclosed entire pic: */
+  width: 1720px;
+  /* height as in iframe.pic */
+  height: 680px;
+  z-index: 1;
+  font-size: 0;
+  line-height: 0;
+  background-color: #FFF;
+  border: 1px solid #d1d1d1; 
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.csslider > ul > li {
+  position: relative;
+  /*cannot change display prop: 
+    slider -> non-functional*/
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 15px;
+  font-size: initial;
+  line-height: normal;
+  -o-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s cubic-bezier(0.1, 0.1, 0.65, 0.65);
+  -webkit-transition: all 0.5s cubic-bezier(0.1, 0.1, 0.65, 0.65);
+  transition: all 0.5s cubic-bezier(0.1, 0.1, 0.65, 0.65);
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  white-space: normal;
+}
+.csslider > ul > li.scrollable {
+  overflow-y: scroll;
+}
+.csslider .arrows label {
+    border-left-color: #B1B1B1;
+    border-right-color: #B1B1B1;
+}
+.csslider > .arrows {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.csslider > input:nth-of-type(1):checked ~ .navigation label:nth-of-type(1):after,
+.csslider > input:nth-of-type(2):checked ~ .navigation label:nth-of-type(2):after,
+.csslider > input:nth-of-type(3):checked ~ .navigation label:nth-of-type(3):after,
+.csslider > input:nth-of-type(4):checked ~ .navigation label:nth-of-type(4):after,
+.csslider > input:nth-of-type(5):checked ~ .navigation label:nth-of-type(5):after,
+.csslider > input:nth-of-type(6):checked ~ .navigation label:nth-of-type(6):after,
+.csslider > input:nth-of-type(7):checked ~ .navigation label:nth-of-type(7):after,
+.csslider > input:nth-of-type(8):checked ~ .navigation label:nth-of-type(8):after,
+.csslider > input:nth-of-type(9):checked ~ .navigation label:nth-of-type(9):after,
+.csslider > input:nth-of-type(10):checked ~ .navigation label:nth-of-type(10):after,
+.csslider > input:nth-of-type(11):checked ~ .navigation label:nth-of-type(11):after,
+.csslider > input:nth-of-type(12):checked ~ .navigation label:nth-of-type(12):after {
+  opacity: 1;
+}
+.csslider > .arrows {
+  position: absolute;
+  left: -31px;
+  top: 50%;
+  width: 100%;
+  height: 26px;
+  padding: 0 31px;
+  z-index: 0;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.csslider > .arrows label {
+  display: none;
+  position: absolute;
+  top: -50%;
+  padding: 13px;
+  box-shadow: inset 2px -2px 0 1px #cc0000;
+  cursor: pointer;
+  -moz-transition: .15s;
+  -o-transition: .15s;
+  -webkit-transition: .15s;
+  transition: .15s;
+}
+.csslider > .arrows label:hover {
+  box-shadow: inset 3px -3px 0 2px #0097ef;
+  margin: 0 0px;
+}
+.csslider > .arrows label:before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  height: 300%;
+  width: 300%;
+}
+.csslider.infinity > input:first-of-type:checked ~ .arrows label:last-of-type,
+.csslider > input:nth-of-type(1):checked ~ .arrows label:nth-of-type(0),
+.csslider > input:nth-of-type(2):checked ~ .arrows label:nth-of-type(1),
+.csslider > input:nth-of-type(3):checked ~ .arrows label:nth-of-type(2),
+.csslider > input:nth-of-type(4):checked ~ .arrows label:nth-of-type(3),
+.csslider > input:nth-of-type(5):checked ~ .arrows label:nth-of-type(4),
+.csslider > input:nth-of-type(6):checked ~ .arrows label:nth-of-type(5),
+.csslider > input:nth-of-type(7):checked ~ .arrows label:nth-of-type(6),
+.csslider > input:nth-of-type(8):checked ~ .arrows label:nth-of-type(7),
+.csslider > input:nth-of-type(9):checked ~ .arrows label:nth-of-type(8),
+.csslider > input:nth-of-type(10):checked ~ .arrows label:nth-of-type(9),
+.csslider > input:nth-of-type(11):checked ~ .arrows label:nth-of-type(10),
+.csslider > input:nth-of-type(12):checked ~ .arrows label:nth-of-type(11) {
+  display: block;
+  left: 0;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.csslider.infinity > input:last-of-type:checked ~ .arrows label:first-of-type,
+.csslider > input:nth-of-type(1):checked ~ .arrows label:nth-of-type(2),
+.csslider > input:nth-of-type(2):checked ~ .arrows label:nth-of-type(3),
+.csslider > input:nth-of-type(3):checked ~ .arrows label:nth-of-type(4),
+.csslider > input:nth-of-type(4):checked ~ .arrows label:nth-of-type(5),
+.csslider > input:nth-of-type(5):checked ~ .arrows label:nth-of-type(6),
+.csslider > input:nth-of-type(6):checked ~ .arrows label:nth-of-type(7),
+.csslider > input:nth-of-type(7):checked ~ .arrows label:nth-of-type(8),
+.csslider > input:nth-of-type(8):checked ~ .arrows label:nth-of-type(9),
+.csslider > input:nth-of-type(9):checked ~ .arrows label:nth-of-type(10),
+.csslider > input:nth-of-type(10):checked ~ .arrows label:nth-of-type(11),
+.csslider > input:nth-of-type(11):checked ~ .arrows label:nth-of-type(12) {
+  display: block;
+  right: 0;
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+/* ### end import from csslider */
+
+header {
+    background-color: #006699;
+    padding: 2px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+footer {
+    position:relative;
+    left: 100px;
+    top: 40px;
+    align-self: center;
+    /*like slider.ul width */
+    width: 1720px;
+    padding: 5px;
+    background-color: #006699;
+}
+/* From W3C:*/
+figure {
+    float: left;
+    width: 100%;
+    text-align: left;
+    font-size: medium;
+    text-indent: 1px;
+    border: thin silver solid;
+    margin: 0em;
+    padding: 0em;
+  }
+figcaption {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.15em;
+    padding: 0.2em;
+    color: black;
+    background-color: lightblue;
+}
+h1 {
+    font-size: 3em;
+}
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 2px;
+}
+.row {
+    float: left;
+    width: 100%;
+    padding: 1px;
+}
+iframe.pic {
+    margin: auto;
+    border: none;
+    padding: 2px;
+    /* settings for Folium html maps: */
+    width: 850px;
+    height: 680px;
+}

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawgit.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <style>#map_ea52ee845a86495cb528de5973173df3 {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+</head>
+<body>    
+    
+    <div class="folium-map" id="map_ea52ee845a86495cb528de5973173df3" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_ea52ee845a86495cb528de5973173df3 = L.map(
+        'map_ea52ee845a86495cb528de5973173df3', {
+        center: [40.6060526588, -74.0663456345],
+        zoom: 10,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+    
+    
+    var tile_layer_a7f2eea275ed46b28b10f4ded5f8eb14 = L.tileLayer(
+        'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "subdomains": "abc"
+}).addTo(map_ea52ee845a86495cb528de5973173df3);
+    
+        
+        var geo_json_1d620b149d5a46f5b44721b63360b6e1 = L.geoJson(
+            {"bbox": [-74.25874745918316, 40.48608307625555, -74.03477748143662, 40.65191856079843], "features": [{"bbox": [-74.25874745918316, 40.48608307625555, -74.03477748143662, 40.65191856079843], "geometry": {"coordinates": [[[-74.05581438861887, 40.64970879790643], [-74.05619414069828, 40.63927748254606], [-74.05623556568028, 40.638139395138424], [-74.05630148788677, 40.637058572747684], [-74.05646822584012, 40.63174669054746], [-74.05661769631568, 40.62728407055003], [-74.05534110428692, 40.62513123369625], [-74.05352244692213, 40.622090795786406], [-74.05235184852711, 40.62013362230913], [-74.0499626776111, 40.61625667425281], [-74.04906155737616, 40.61482391629054], [-74.04806555855382, 40.61324022375548], [-74.0474892623948, 40.61233098164081], [-74.04644311547098, 40.61075134623523], [-74.04388942485573, 40.60691293977061], [-74.04384055466234, 40.606840052295034], [-74.04378815801105, 40.606760637367316], [-74.04304480052042, 40.60562648244552], [-74.04204281531865, 40.60409766569782], [-74.04139303529975, 40.60310619833151], [-74.04051513309625, 40.59963562116584], [-74.03787623561931, 40.58920115279889], [-74.03732162923153, 40.58694697398486], [-74.03477748143662, 40.57660008580224], [-74.03523774038663, 40.57285954498283], [-74.03792632289658, 40.559191463386], [-74.03843830274637, 40.556744571751885], [-74.04955070256054, 40.5507477977405], [-74.05176394042218, 40.54955317259838], [-74.05394570923872, 40.54837545017854], [-74.0557943531179, 40.547377484010056], [-74.08967352580326, 40.5290776891231], [-74.11267135794617, 40.516384907838095], [-74.11582903685492, 40.51245190574179], [-74.13043668687894, 40.4927140141513], [-74.16155369914587, 40.48608307625555], [-74.2013590278871, 40.48740027430875], [-74.21918599603049, 40.48813437004562], [-74.2348836070352, 40.49071068117587], [-74.24443849234792, 40.492277691403466], [-74.25702151226695, 40.49414563829132], [-74.25874354354177, 40.49704148672901], [-74.25874565719512, 40.50009951350714], [-74.25874745918316, 40.502706023611275], [-74.25797605048972, 40.507792514259705], [-74.25850081725457, 40.50810821260526], [-74.25816973843024, 40.50886107373202], [-74.25718627053094, 40.51075883849031], [-74.2548099818519, 40.51534380035756], [-74.25441676320246, 40.51571905126459], [-74.2460688657083, 40.520951503130576], [-74.24609770471172, 40.52161425163748], [-74.24646176975536, 40.52477113969674], [-74.24646663387522, 40.52481332777161], [-74.24647889041466, 40.52485043115916], [-74.24872958085065, 40.532753476326725], [-74.25020554484419, 40.53962964085906], [-74.25060899553208, 40.541850892442376], [-74.2492121406837, 40.545065317205164], [-74.24741487224904, 40.54920068898237], [-74.23921087822707, 40.553763864025036], [-74.23169304873944, 40.55845726378755], [-74.22908037877775, 40.558227394601126], [-74.21839814670275, 40.55699650612369], [-74.21678980882719, 40.55866917514027], [-74.21527838395635, 40.56024095814067], [-74.20896842251206, 40.5765630278974], [-74.2082953549893, 40.57905224287231], [-74.20629826587839, 40.588541421183095], [-74.20368825253404, 40.59269105218513], [-74.19952011304316, 40.59753860597438], [-74.19940829427699, 40.60020116521077], [-74.20381233197925, 40.6059606945425], [-74.20312809666709, 40.61410903543582], [-74.20186318717063, 40.618557163680784], [-74.20373777321852, 40.624226879888845], [-74.20348902435096, 40.625050548560736], [-74.20244094598947, 40.62852077111393], [-74.20224710449818, 40.6309031552131], [-74.20046907598689, 40.63263017375196], [-74.19704621937291, 40.635778586105985], [-74.19701681733751, 40.63580563427874], [-74.1969957438038, 40.63583428818041], [-74.19570115953177, 40.63759460456259], [-74.18967941910907, 40.64318914815333], [-74.18834161814708, 40.644266332921966], [-74.18676736827277, 40.64524937802675], [-74.18562306664826, 40.64600893728255], [-74.18138890904083, 40.64647721899204], [-74.17759484611335, 40.64604900877305], [-74.17061809793314, 40.64529083014511], [-74.16146036005293, 40.644294969764864], [-74.15798759540647, 40.643861788966056], [-74.14325446128314, 40.64214955828561], [-74.14228775044478, 40.64222799353028], [-74.14214231625145, 40.64223979266932], [-74.14207333433188, 40.6422453884329], [-74.14200915419914, 40.64225669765252], [-74.13391260319526, 40.6436832246905], [-74.13002143148056, 40.64381544659564], [-74.12556919700093, 40.644023137427155], [-74.1206747871429, 40.64545614996708], [-74.10997660524885, 40.64801116691155], [-74.10503930361064, 40.64808072718306], [-74.10025933471084, 40.648147868956016], [-74.09374670261535, 40.648239028360244], [-74.0912536542615, 40.649444718287825], [-74.08680605223485, 40.65159542939103], [-74.07156992553884, 40.651812228050254], [-74.0557974835737, 40.65191856079843], [-74.05581438861887, 40.64970879790643]]], "type": "Polygon"}, "id": "2", "properties": {"BoroCode": 5, "BoroName": "Staten Island", "Shape_Area": 2532695810.38, "Shape_Leng": 210579.552313, "highlight": {}, "style": {"edgeColor": "#black", "fillColor": "#eea700", "fillOpacity": 0.2, "weight": 1}}, "type": "Feature"}], "type": "FeatureCollection"}
+            
+            ).addTo(map_ea52ee845a86495cb528de5973173df3);
+        geo_json_1d620b149d5a46f5b44721b63360b6e1.setStyle(function(feature) {return feature.properties.style;});
+        
+    
+            var feature_group_6a08b6a434884eacb8f4960e08f5a2f4 = L.featureGroup(
+                ).addTo(map_ea52ee845a86495cb528de5973173df3);
+        
+    
+            var circle_marker_5d22d9565001479c8e540367da71b5c4 = L.circleMarker(
+                [40.564209, -74.1253046199539],
+                {
+  "bubblingMouseEvents": true,
+  "color": "blue",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "red",
+  "fillOpacity": 0.3,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 10,
+  "stroke": true,
+  "weight": 1
+}
+                )
+                .addTo(feature_group_6a08b6a434884eacb8f4960e08f5a2f4);
+            
+    
+        circle_marker_5d22d9565001479c8e540367da71b5c4.bindTooltip(
+            '<div>'
+            + 'Nominatim, Richmond county: [40.564209, -74.1253046199539]' + '</div>',
+            {"sticky": true}
+        );
+        
+    
+            var feature_group_1f150bec250942ae960cb62b1db523fc = L.featureGroup(
+                ).addTo(map_ea52ee845a86495cb528de5973173df3);
+        
+    
+                var poly_line_460f4461daca4f64b7e88bb5634a40ff = L.polyline(
+                    [[[40.651812, -74.0349887], [40.477399, -74.0349887]], [[40.477399, -74.0349887], [40.477399, -74.25909]], [[40.477399, -74.25909], [40.651812, -74.25909]], [[40.651812, -74.25909], [40.651812, -74.0349887]]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "red",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "red",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1.0,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3
+}
+                    )
+                    .addTo(feature_group_1f150bec250942ae960cb62b1db523fc);
+            
+    
+            var feature_group_36583d28f86c44dba80bba125523fc6b = L.featureGroup(
+                ).addTo(map_ea52ee845a86495cb528de5973173df3);
+        
+    
+            var circle_marker_8ff998dbc6134b3d8d6903f803a94556 = L.circleMarker(
+                [40.5795317, -74.1502007],
+                {
+  "bubblingMouseEvents": true,
+  "color": "blue",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "green",
+  "fillOpacity": 0.3,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 10,
+  "stroke": true,
+  "weight": 1
+}
+                )
+                .addTo(feature_group_36583d28f86c44dba80bba125523fc6b);
+            
+    
+        circle_marker_8ff998dbc6134b3d8d6903f803a94556.bindTooltip(
+            '<div>'
+            + 'GoogleV3, Richmond county: [40.5795317, -74.1502007]' + '</div>',
+            {"sticky": true}
+        );
+        
+    
+            var feature_group_4c8d37dd32df4e02a36f6dc16be0f83d = L.featureGroup(
+                ).addTo(map_ea52ee845a86495cb528de5973173df3);
+        
+    
+                var poly_line_071915fd69e940479a48f076941c3942 = L.polyline(
+                    [[[40.6518121, -74.0345471], [40.4773991, -74.0345471]], [[40.4773991, -74.0345471], [40.4773991, -74.25908989999999]], [[40.4773991, -74.25908989999999], [40.6518121, -74.25908989999999]], [[40.6518121, -74.25908989999999], [40.6518121, -74.0345471]]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "green",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "green",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1.0,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3
+}
+                    )
+                    .addTo(feature_group_4c8d37dd32df4e02a36f6dc16be0f83d);
+            
+    
+            var feature_group_6333bd6bedb14884894d6b69390cd8a4 = L.featureGroup(
+                ).addTo(map_ea52ee845a86495cb528de5973173df3);
+        
+    
+            var circle_marker_8990deeca25045349d3f2195a6b8fd1f = L.circleMarker(
+                [40.580769935000035, -74.15532721799997],
+                {
+  "bubblingMouseEvents": true,
+  "color": "blue",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "blue",
+  "fillOpacity": 0.3,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 10,
+  "stroke": true,
+  "weight": 1
+}
+                )
+                .addTo(feature_group_6333bd6bedb14884894d6b69390cd8a4);
+            
+    
+        circle_marker_8990deeca25045349d3f2195a6b8fd1f.bindTooltip(
+            '<div>'
+            + 'ArcGis, Richmond county: [40.580769935000035, -74.15532721799997]' + '</div>',
+            {"sticky": true}
+        );
+        
+    
+            var feature_group_53703b51918140acbe5bbc7a2eebd673 = L.featureGroup(
+                ).addTo(map_ea52ee845a86495cb528de5973173df3);
+        
+    
+                var poly_line_1888ed07ee114422ae3d1f0e86c98756 = L.polyline(
+                    [[[40.680769935000036, -74.05532721799997], [40.48076993500003, -74.05532721799997]], [[40.48076993500003, -74.05532721799997], [40.48076993500003, -74.25532721799996]], [[40.48076993500003, -74.25532721799996], [40.680769935000036, -74.25532721799996]], [[40.680769935000036, -74.25532721799996], [40.680769935000036, -74.05532721799997]]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "blue",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "blue",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1.0,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3
+}
+                    )
+                    .addTo(feature_group_53703b51918140acbe5bbc7a2eebd673);
+            
+    
+            var feature_group_5db75be01a4242a4a627e7e54d766ad4 = L.featureGroup(
+                ).addTo(map_ea52ee845a86495cb528de5973173df3);
+        
+    
+            var circle_marker_d68ec145300b4c0cb95ab424b3499e74 = L.circleMarker(
+                [40.6997, -73.83455],
+                {
+  "bubblingMouseEvents": true,
+  "color": "blue",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "cyan",
+  "fillOpacity": 0.3,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 10,
+  "stroke": true,
+  "weight": 1
+}
+                )
+                .addTo(feature_group_5db75be01a4242a4a627e7e54d766ad4);
+            
+    
+        circle_marker_d68ec145300b4c0cb95ab424b3499e74.bindTooltip(
+            '<div>'
+            + 'AzureMaps, Richmond county: [40.6997, -73.83455]' + '</div>',
+            {"sticky": true}
+        );
+        
+    
+            var feature_group_d996bc5eb79147eb8a0e6c12f42538ec = L.featureGroup(
+                ).addTo(map_ea52ee845a86495cb528de5973173df3);
+        
+    
+                var poly_line_76991bde1f46486a81b07c0fe16939a7 = L.polyline(
+                    [[[40.71194, -73.81194], [40.68526, -73.81194]], [[40.68526, -73.81194], [40.68526, -73.85111]], [[40.68526, -73.85111], [40.71194, -73.85111]], [[40.71194, -73.85111], [40.71194, -73.81194]]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "cyan",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1.0,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3
+}
+                    )
+                    .addTo(feature_group_d996bc5eb79147eb8a0e6c12f42538ec);
+            
+    
+            var layer_control_a709800f61484df4a70a56810d1bf910 = {
+                base_layers : { "cartodbpositron" : tile_layer_a7f2eea275ed46b28b10f4ded5f8eb14, },
+                overlays : { "Boro bounds" : geo_json_1d620b149d5a46f5b44721b63360b6e1,"<span style=\"color:red;\">Nominatim</span>" : feature_group_1f150bec250942ae960cb62b1db523fc,"<span style=\"color:green;\">GoogleV3</span>" : feature_group_4c8d37dd32df4e02a36f6dc16be0f83d,"<span style=\"color:blue;\">ArcGis</span>" : feature_group_53703b51918140acbe5bbc7a2eebd673,"<span style=\"color:cyan;\">AzureMaps</span>" : feature_group_d996bc5eb79147eb8a0e6c12f42538ec, }
+                };
+            L.control.layers(
+                layer_control_a709800f61484df4a70a56810d1bf910.base_layers,
+                layer_control_a709800f61484df4a70a56810d1bf910.overlays,
+                {position: 'topright',
+                 collapsed: false,
+                 autoZIndex: true
+                }).addTo(map_ea52ee845a86495cb528de5973173df3);
+            
+        
+</script>
